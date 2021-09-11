@@ -96,14 +96,24 @@ public class MainActivity extends AppCompatActivity {
 
     public void paste(View view) {
 
-        try {  ClipboardManager clipboardManager = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
+        try {
+            if(message.length()>0){
+            ClipboardManager clipboardManager = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
             ClipData.Item item = clipboardManager.getPrimaryClip().getItemAt(0);
             String pastedata = item.getText().toString();
             Toast.makeText(this, "Your Message Was Pasted to clip board", Toast.LENGTH_SHORT).show();
             et_message.setText(pastedata);}
+        else{
+            Toast.makeText(this, "Please Copy the message", Toast.LENGTH_SHORT).show();
+       }
+        }
+
         catch(Exception  e){
             e.printStackTrace();
         }
+//        else{
+//            Toast.makeText(this, "Please Copy the message", Toast.LENGTH_SHORT).show();
+//        }
 
         }
 
