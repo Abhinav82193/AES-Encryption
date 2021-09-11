@@ -8,7 +8,7 @@
     android:paddingRight="16dp"
     android:paddingLeft="16dp"
     android:paddingBottom="16dp"
-    android:background="@drawable/lay"
+
     tools:context=".MainActivity">
 
     <EditText
