@@ -53,25 +53,27 @@
         android:layout_marginTop="350dp"
         android:layout_marginRight="50dp"
         />
+
     <ImageButton
         android:id="@+id/b1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="330dp"
+        android:layout_width="80dp"
+        android:layout_height="50dp"
         android:layout_marginLeft="350dp"
-        android:src="@drawable/clip"
+        android:layout_marginTop="330dp"
         android:onClick="copy"
+        android:scaleType="centerCrop"
+        android:src="@drawable/copy"
 
         />
+
     <ImageButton
+        android:id="@+id/b2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/b2"
-        android:layout_marginTop="45dp"
         android:layout_marginLeft="350dp"
-        android:src="@drawable/paste"
+        android:layout_marginTop="45dp"
         android:onClick="paste"
-        />
+        android:src="@drawable/paste" />
 
 
 </RelativeLayout>
