@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="16dp"
+    android:paddingRight="16dp"
+    android:paddingLeft="16dp"
+    android:paddingBottom="16dp"
+    android:background="@drawable/lay"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Enter your key"
+        android:id="@+id/et_key"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:hint="Enter Message"
+        android:id="@+id/et_message"
+        android:layout_marginRight="50dp"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Encrypt"
+        android:id="@+id/encrypt"
+        android:layout_marginTop="160dp"
+        android:onClick="encrypt"
+        tools:ignore="UsingOnClickInXml"
+        android:background="@color/teal_700"
+        android:textColor="@color/white"
+        />
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Decrypt"
+        android:id="@+id/decrypt"
+        android:layout_marginTop="220dp"
+        android:onClick="decrypt"
+        android:background="@color/teal_700"
+        android:textColor="@color/white"
+        />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/message"
+        android:layout_marginTop="350dp"
+        android:layout_marginRight="50dp"
+        />
+    <ImageButton
+        android:id="@+id/b1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="330dp"
+        android:layout_marginLeft="350dp"
+        android:src="@drawable/clip"
+        android:onClick="copy"
+        />
+    <ImageButton
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/b2"
+        android:layout_marginTop="45dp"
+        android:layout_marginLeft="350dp"
+        android:src="@drawable/paste"
+        android:onClick="paste"
+        />
+
+
+</RelativeLayout>
