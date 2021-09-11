@@ -14,7 +14,9 @@
         android:id="@+id/et_key"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter your key" />
+        android:hint="Enter your key"
+        android:password="true"
+        />
 
     <EditText
         android:id="@+id/et_message"
@@ -60,7 +62,8 @@
         android:layout_marginTop="330dp"
         android:onClick="copy"
         android:scaleType="centerCrop"
-        android:src="@drawable/clip" />
+        android:visibility="invisible"
+        android:src="@drawable/copy" />
 
     <ImageButton
         android:id="@+id/b2"

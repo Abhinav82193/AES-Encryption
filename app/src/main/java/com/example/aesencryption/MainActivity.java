@@ -72,10 +72,10 @@ public class MainActivity extends AppCompatActivity {
              inputmessage=et_message.getText().toString();
      try {
          encrpyted = AESCrypt.encrypt(et_key.getText().toString(), et_message.getText().toString());
-         et_message.setText("");
-         et_key.setText("");
+        // et_message.setText("");
+        // et_key.setText("");
          message.setText(String.format("%s", encrpyted));
-        // b1.getVisibility(View.VISIBLE);
+         b1.setVisibility(VISIBLE);
        //  b1.setEnabled(true);
 
 
