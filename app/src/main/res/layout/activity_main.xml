@@ -59,6 +59,7 @@
         android:layout_marginLeft="350dp"
         android:layout_marginTop="330dp"
         android:onClick="copy"
+        android:visibility="invisible"
         android:scaleType="centerCrop"
         android:src="@drawable/clip" />
 

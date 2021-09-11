@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity {
          et_message.setText("");
          et_key.setText("");
          message.setText(String.format("%s", encrpyted));
-         b1.getVisibility();
+         b1.setVisibility(View.VISIBLE);
        //  b1.setEnabled(true);
 
 
