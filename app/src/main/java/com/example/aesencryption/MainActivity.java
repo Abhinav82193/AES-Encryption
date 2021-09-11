@@ -38,11 +38,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
         et_key = findViewById(R.id.et_key);
         et_message = findViewById(R.id.et_message);
         message = findViewById(R.id.message);
         b1=findViewById(R.id.b1);
-        b1=findViewById(R.id.b2);
+
+        b2=findViewById(R.id.b2);
       ClipboardManager clipboardManager = (ClipboardManager)getSystemService(Context.CLIPBOARD_SERVICE);
 
       //  b2.setEnabled(false);
@@ -87,6 +89,7 @@ public class MainActivity extends AppCompatActivity {
             ClipData clipData = ClipData.newPlainText("lable", encrpyted);
             clipboardManager.setPrimaryClip(clipData);
             Toast.makeText(this, "Your Message Was Copied to clip board", Toast.LENGTH_SHORT).show();
+            b2.setVisibility(View.VISIBLE);
         }
         else{
             Toast.makeText(this, "Please Create a Encrypted message", Toast.LENGTH_SHORT).show();
@@ -137,6 +140,13 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+    }
+    public void reset(View view){
+        et_key.setText("");
+        et_message.setText("");
+        message.setText("");
+        b2.setVisibility(View.INVISIBLE);
+        Toast.makeText(this,"Reset",Toast.LENGTH_SHORT).show();
     }
 
 
