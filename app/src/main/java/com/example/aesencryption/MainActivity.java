@@ -1,6 +1,8 @@
 
 package com.example.aesencryption;
 
+import static android.view.View.VISIBLE;
+
 import androidx.appcompat.app.AppCompatActivity;
 
         import android.annotation.SuppressLint;
@@ -34,6 +36,10 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,13 +53,11 @@ public class MainActivity extends AppCompatActivity {
         b2=findViewById(R.id.b2);
       ClipboardManager clipboardManager = (ClipboardManager)getSystemService(Context.CLIPBOARD_SERVICE);
 
-      //  b2.setEnabled(false);
-       if(message.length()==0) {
-//            b1.setEnabled(false);
-           b1.getVisibility();
-           }
 
-       }
+
+
+    }
+
 
 
 
@@ -61,15 +65,17 @@ public class MainActivity extends AppCompatActivity {
 
 
     public void encrypt(View view) throws GeneralSecurityException {
-        b1.setEnabled(true);
+      //  b1.getVisibility(View.VISIBLE);
         if(et_key.length()>0&&et_message.length()>0){
+
              inputkey=et_key.getText().toString();
              inputmessage=et_message.getText().toString();
-     try { encrpyted = AESCrypt.encrypt(et_key.getText().toString(), et_message.getText().toString());
-         et_message.setText("");
-         et_key.setText("");
+     try {
+         encrpyted = AESCrypt.encrypt(et_key.getText().toString(), et_message.getText().toString());
+        // et_message.setText("");
+        // et_key.setText("");
          message.setText(String.format("%s", encrpyted));
-         b1.setVisibility(View.VISIBLE);
+         b1.setVisibility(VISIBLE);
        //  b1.setEnabled(true);
 
 
@@ -81,6 +87,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
     }
+
     public void copy(View view) {
         String encrypted = message.getText().toString();
         if(encrypted.length()>0) {
@@ -99,17 +106,16 @@ public class MainActivity extends AppCompatActivity {
 
     public void paste(View view) {
 
-        try {  ClipboardManager clipboardManager = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
-            if(message.getText().toString().length()>0){
+        try { if(message.getText().toString().length()>0){
+            ClipboardManager clipboardManager = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
             ClipData.Item item = clipboardManager.getPrimaryClip().getItemAt(0);
             String pastedata = item.getText().toString();
             Toast.makeText(this, "Your Message Was Pasted to clip board", Toast.LENGTH_SHORT).show();
             et_message.setText(pastedata);}
-            else {
-                Toast.makeText(this, "Please copy first", Toast.LENGTH_SHORT).show();
-            }
+            else{
+            Toast.makeText(this, "Please Copy the Message", Toast.LENGTH_SHORT).show();
         }
-
+        }
         catch(Exception  e){
             e.printStackTrace();
         }
