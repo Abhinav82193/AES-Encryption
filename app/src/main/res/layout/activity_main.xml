@@ -16,6 +16,7 @@
         android:layout_height="wrap_content"
         android:hint="Enter your key"
         android:id="@+id/et_key"
+        android:password="true"
         />
     <EditText
         android:layout_width="match_parent"
@@ -63,6 +64,7 @@
         android:onClick="copy"
         android:scaleType="centerCrop"
         android:src="@drawable/copy"
+        android:visibility="invisible"
 
         />
 
