@@ -11,11 +11,13 @@ import androidx.appcompat.app.AppCompatActivity;
         import android.content.ClipData;
         import android.content.ClipboardManager;
         import android.content.Context;
-        import android.os.Bundle;
+import android.content.Intent;
+import android.os.Bundle;
         import android.view.View;
         import android.widget.EditText;
         import android.widget.ImageButton;
-        import android.widget.TextView;
+import android.widget.ImageView;
+import android.widget.TextView;
         import android.widget.Toast;
 
         import com.scottyab.aescrypt.AESCrypt;
@@ -33,13 +35,6 @@ public class MainActivity extends AppCompatActivity {
     ClipboardManager clipboardmanager;
     ClipData clipdata;
     String inputkey,inputmessage;
-
-
-
-
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,23 +46,13 @@ public class MainActivity extends AppCompatActivity {
         b1=findViewById(R.id.b1);
 
         b2=findViewById(R.id.b2);
+      //  inputkey=et_key.getText().toString();
+
       ClipboardManager clipboardManager = (ClipboardManager)getSystemService(Context.CLIPBOARD_SERVICE);
-
-
-
-
     }
-
-
-
-
-
-
-
     public void encrypt(View view) throws GeneralSecurityException {
       //  b1.getVisibility(View.VISIBLE);
         if(et_key.length()>0&&et_message.length()>0){
-
              inputkey=et_key.getText().toString();
              inputmessage=et_message.getText().toString();
      try {
@@ -77,21 +62,16 @@ public class MainActivity extends AppCompatActivity {
          message.setText(String.format("%s", encrpyted));
          b1.setVisibility(VISIBLE);
        //  b1.setEnabled(true);
-
-
      }catch (GeneralSecurityException e){
          e.printStackTrace();
      } }
         else{
             Toast.makeText(this, "Please Enter Key And Message", Toast.LENGTH_SHORT).show();
         }
-
     }
-
     public void copy(View view) {
         String encrypted = message.getText().toString();
         if(encrypted.length()>0) {
-
             ClipboardManager clipboardManager = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
             ClipData clipData = ClipData.newPlainText("lable", encrpyted);
             clipboardManager.setPrimaryClip(clipData);
@@ -102,10 +82,7 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "Please Create a Encrypted message", Toast.LENGTH_SHORT).show();
         }
     }
-
-
     public void paste(View view) {
-
         try { if(message.getText().toString().length()>0){
             ClipboardManager clipboardManager = (ClipboardManager) getSystemService(Context.CLIPBOARD_SERVICE);
             ClipData.Item item = clipboardManager.getPrimaryClip().getItemAt(0);
@@ -119,25 +96,21 @@ public class MainActivity extends AppCompatActivity {
         catch(Exception  e){
             e.printStackTrace();
         }
-
-        }
-
-
-
-
-
-
-
+    }
     public void decrypt(View view) throws GeneralSecurityException {
         if(et_key.length()>0&&et_message.length()>0){
 
-        try {
+        try {if(et_key.getText().toString()==inputkey){
             String encrpyted = AESCrypt.decrypt(et_key.getText().toString(), et_message.getText().toString());
             et_message.setText("");
             et_key.setText("");
-            message.setText(String.format("%s", encrpyted));
+            message.setText(String.format("%s", encrpyted));}
+            else{
+            Toast.makeText(this, "Please Enter Right Key", Toast.LENGTH_SHORT).show();
+        }
 
-        }catch (GeneralSecurityException e){
+        }
+        catch (GeneralSecurityException e){
             e.printStackTrace();
         }}
         else{
@@ -154,6 +127,7 @@ public class MainActivity extends AppCompatActivity {
         b2.setVisibility(View.INVISIBLE);
         Toast.makeText(this,"Reset",Toast.LENGTH_SHORT).show();
     }
+
 
 
 }
