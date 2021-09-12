@@ -2,8 +2,10 @@ package com.example.aesencryption;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
@@ -23,6 +25,7 @@ public class MainActivity2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         message_edit_text = findViewById(R.id.message_edit_text);
         hash_button = findViewById(R.id.hash_button);
         textview_md5 = findViewById(R.id.textview_md5);
@@ -66,6 +69,11 @@ public class MainActivity2 extends AppCompatActivity {
     public void hashValue(View view) {
         String input = message_edit_text.getText().toString();
         String output = getMd5(input);
-        textview_md5.setText("Your Encrypted message:"+output);
+        textview_md5.setText("Your Encrypted message: \n "+output);
+        View v = this.getCurrentFocus();
+        if (v != null) {
+            InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        }
     }
 }
