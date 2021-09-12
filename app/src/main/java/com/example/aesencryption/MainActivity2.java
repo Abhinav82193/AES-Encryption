@@ -12,14 +12,15 @@ import java.math.BigInteger;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-public class MD5 extends AppCompatActivity {
+public class MainActivity2 extends AppCompatActivity {
     EditText message_edit_text = findViewById(R.id.message_edit_text);
     Button hash_button = findViewById(R.id.hash_button);
     TextView textview_md5 = findViewById(R.id.textview_md5);
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_md5);
+        setContentView(R.layout.activity_main2);
     }
     public static String getMd5(String input)
     {
