@@ -12,9 +12,29 @@
     tools:context=".FiirstActivity">
 
     <Button
+        android:id="@+id/b1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-
+        android:layout_marginTop="200dp"
+        android:layout_marginLeft="150dp"
+        android:text="AES"
+        android:background="@color/teal_200"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:onClick="AES"
         />
+    <Button
+        android:id="@+id/b2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="300dp"
+        android:layout_marginLeft="150dp"
+        android:text="MD5"
+        android:background="@color/teal_200"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:onClick="MD5"
+        />
+
 
 </RelativeLayout>
