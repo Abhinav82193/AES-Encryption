@@ -4,26 +4,17 @@ package com.example.aesencryption;
 import static android.view.View.VISIBLE;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-        import android.annotation.SuppressLint;
-       // import android.content.ClipData;
-       // import android.content.ClipboardManager;
-        import android.content.ClipData;
-        import android.content.ClipboardManager;
-        import android.content.Context;
-import android.content.Intent;
+import android.content.ClipData;
+import android.content.ClipboardManager;
+import android.content.Context;
 import android.os.Bundle;
-        import android.view.View;
-        import android.widget.EditText;
-        import android.widget.ImageButton;
-import android.widget.ImageView;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.TextView;
-        import android.widget.Toast;
-
-        import com.scottyab.aescrypt.AESCrypt;
-
-        import java.nio.charset.StandardCharsets;
-        import java.security.GeneralSecurityException;
+import android.widget.Toast;
+import com.scottyab.aescrypt.AESCrypt;
+import java.security.GeneralSecurityException;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -32,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     TextView message;
     ImageButton b1,b2;
     String encrpyted,pastedata;
-    ClipboardManager clipboardmanager;
+    //ClipboardManager clipboardmanager;
     ClipData clipdata;
     String inputkey,inputmessage;
     @Override
