@@ -37,10 +37,18 @@ public class MainActivity extends AppCompatActivity {
         b1=findViewById(R.id.b1);
 
         b2=findViewById(R.id.b2);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
       //  inputkey=et_key.getText().toString();
 
       //ClipboardManager clipboardManager = (ClipboardManager)getSystemService(Context.CLIPBOARD_SERVICE);
     }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
+
     public void encrypt(View view) throws GeneralSecurityException {
         if(et_key.length()>0&&et_message.length()>0){
              inputkey=et_key.getText().toString();

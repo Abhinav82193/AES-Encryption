@@ -13,15 +13,28 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 public class MainActivity2 extends AppCompatActivity {
-    EditText message_edit_text = findViewById(R.id.message_edit_text);
-    Button hash_button = findViewById(R.id.hash_button);
-    TextView textview_md5 = findViewById(R.id.textview_md5);
+    EditText message_edit_text;
+    Button hash_button;
+    TextView textview_md5;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
+        message_edit_text = findViewById(R.id.message_edit_text);
+        hash_button = findViewById(R.id.hash_button);
+        textview_md5 = findViewById(R.id.textview_md5);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
+
+    @Override
+    public boolean onSupportNavigateUp() {
+        onBackPressed();
+        return true;
+    }
+
     public static String getMd5(String input)
     {
         try {
@@ -53,6 +66,6 @@ public class MainActivity2 extends AppCompatActivity {
     public void hashValue(View view) {
         String input = message_edit_text.getText().toString();
         String output = getMd5(input);
-        textview_md5.setText(output);
+        textview_md5.setText("Your Encrypted message:"+output);
     }
 }
