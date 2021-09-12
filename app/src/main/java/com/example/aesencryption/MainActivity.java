@@ -48,10 +48,9 @@ public class MainActivity extends AppCompatActivity {
         b2=findViewById(R.id.b2);
       //  inputkey=et_key.getText().toString();
 
-      ClipboardManager clipboardManager = (ClipboardManager)getSystemService(Context.CLIPBOARD_SERVICE);
+      //ClipboardManager clipboardManager = (ClipboardManager)getSystemService(Context.CLIPBOARD_SERVICE);
     }
     public void encrypt(View view) throws GeneralSecurityException {
-      //  b1.getVisibility(View.VISIBLE);
         if(et_key.length()>0&&et_message.length()>0){
              inputkey=et_key.getText().toString();
              inputmessage=et_message.getText().toString();
@@ -100,7 +99,7 @@ public class MainActivity extends AppCompatActivity {
     public void decrypt(View view) throws GeneralSecurityException {
         if(et_key.length()>0&&et_message.length()>0){
 
-        try {if(et_key.getText().toString()==inputkey){
+        try {if(et_key.getText().toString().equals(inputkey)){
             String encrpyted = AESCrypt.decrypt(et_key.getText().toString(), et_message.getText().toString());
             et_message.setText("");
             et_key.setText("");
