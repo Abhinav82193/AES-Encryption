@@ -31,7 +31,7 @@ public class SplashActivity extends AppCompatActivity {
                     e.printStackTrace();
                 }
                 finally {
-                    Intent intent=new Intent(SplashActivity.this,Algorithms.class);
+                    Intent intent=new Intent(SplashActivity.this,FiirstActivity.class);
                     startActivity(intent);
                     finish();
                 }
