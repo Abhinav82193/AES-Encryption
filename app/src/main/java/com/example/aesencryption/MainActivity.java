@@ -23,7 +23,7 @@ public class MainActivity extends AppCompatActivity {
     TextView message;
     ImageButton b1,b2;
     String encrpyted,pastedata;
-    //ClipboardManager clipboardmanager;
+    ClipboardManager clipboardmanager;
     ClipData clipdata;
     String inputkey,inputmessage;
     @Override
@@ -38,9 +38,7 @@ public class MainActivity extends AppCompatActivity {
 
         b2=findViewById(R.id.b2);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-      //  inputkey=et_key.getText().toString();
 
-      //ClipboardManager clipboardManager = (ClipboardManager)getSystemService(Context.CLIPBOARD_SERVICE);
     }
 
     @Override
@@ -55,11 +53,11 @@ public class MainActivity extends AppCompatActivity {
              inputmessage=et_message.getText().toString();
      try {
          encrpyted = AESCrypt.encrypt(et_key.getText().toString(), et_message.getText().toString());
-        // et_message.setText("");
-        // et_key.setText("");
+         et_message.setText("");
+         et_key.setText("");
          message.setText(String.format("%s", encrpyted));
          b1.setVisibility(VISIBLE);
-       //  b1.setEnabled(true);
+
      }catch (GeneralSecurityException e){
          e.printStackTrace();
      } }
