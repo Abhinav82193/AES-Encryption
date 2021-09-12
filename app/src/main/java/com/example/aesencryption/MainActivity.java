@@ -9,6 +9,7 @@ import android.content.ClipboardManager;
 import android.content.Context;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -30,7 +31,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         et_key = findViewById(R.id.et_key);
         et_message = findViewById(R.id.et_message);
         message = findViewById(R.id.message);
@@ -50,6 +51,11 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void encrypt(View view) throws GeneralSecurityException {
+        View v = this.getCurrentFocus();
+        if (v != null) {
+            InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        }
         if(et_key.length()>0&&et_message.length()>0){
              inputkey=et_key.getText().toString();
              inputmessage=et_message.getText().toString();
@@ -96,6 +102,11 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     public void decrypt(View view) throws GeneralSecurityException {
+        View v = this.getCurrentFocus();
+        if (v != null) {
+            InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
+            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        }
         if(et_key.length()>0&&et_message.length()>0){
 
         try {if(et_key.getText().toString().equals(inputkey)){
@@ -123,6 +134,7 @@ public class MainActivity extends AppCompatActivity {
         et_message.setText("");
         message.setText("");
         b2.setVisibility(View.INVISIBLE);
+        b1.setVisibility(View.INVISIBLE);
         Toast.makeText(this,"Reset",Toast.LENGTH_SHORT).show();
     }
 
