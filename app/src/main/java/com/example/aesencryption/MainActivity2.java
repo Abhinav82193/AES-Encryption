@@ -25,18 +25,18 @@ public class MainActivity2 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+     //  getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         message_edit_text = findViewById(R.id.message_edit_text);
         hash_button = findViewById(R.id.hash_button);
         textview_md5 = findViewById(R.id.textview_md5);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
-    @Override
-    public boolean onSupportNavigateUp() {
-        onBackPressed();
-        return true;
-    }
+//    @Override
+//    public boolean onSupportNavigateUp() {
+//        onBackPressed();
+//        return true;
+//    }
 
     public static String getMd5(String input)
     {

@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.aesencryption">
+    <uses-permission android:name="android.permission.CALL_PHONE"/>
 
     <application
         android:allowBackup="true"
@@ -11,11 +13,15 @@
         android:theme="@style/Theme.AesEncryption">
         <activity
             android:name=".MainActivity2"
+            android:parentActivityName=".FiirstActivity"
             android:label="MD5"
-            android:exported="true" />
+            android:exported="true"/>
+
         <activity
             android:name=".FiirstActivity"
-            android:exported="true" />
+            android:exported="true"
+
+            />
         <activity
             android:name=".SplashActivity"
             android:exported="true">
@@ -30,6 +36,7 @@
             android:exported="true"
             android:label="AES"
             />
+
     </application>
 
 </manifest>

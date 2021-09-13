@@ -11,6 +11,8 @@
 
     tools:context=".FiirstActivity">
 
+
+
     <Button
         android:id="@+id/b1"
         android:layout_width="wrap_content"
@@ -37,6 +39,28 @@
         android:onClick="MD5"
         android:textColor="@color/white"
         />
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/button"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="50dp"
+        android:text="Share"
+        android:textColor="@color/teal_700"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:textColorHighlight="@color/white"
+        android:onClick="share"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="450dp"
+        android:layout_marginLeft="50dp"
+        android:text="Hello"
+        android:textSize="30sp"
+        />
+
 
 
 </RelativeLayout>
