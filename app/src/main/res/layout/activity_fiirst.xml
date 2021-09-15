@@ -1,42 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingRight="16dp"
-    android:paddingBottom="16dp"
     android:paddingLeft="16dp"
     android:paddingTop="16dp"
+    android:paddingRight="16dp"
+    android:paddingBottom="16dp"
+    tools:context=".FiirstActivity"
+    android:orientation="vertical">
 
-    tools:context=".FiirstActivity">
-
-    <Button
-        android:id="@+id/b1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="200dp"
-        android:layout_marginLeft="150dp"
-        android:text="AES"
-        android:background="@color/teal_700"
-        android:textSize="30sp"
-        android:textStyle="bold"
+    <RelativeLayout
+        android:id="@+id/ll1"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/bg_round"
+        android:layout_marginTop="60dp"
         android:onClick="AES"
-        android:textColor="@color/white"
-        />
-    <Button
-        android:id="@+id/b2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="300dp"
-        android:layout_marginLeft="150dp"
-        android:text="MD5"
-        android:background="@color/teal_700"
-        android:textSize="30sp"
-        android:textStyle="bold"
-        android:onClick="MD5"
-        android:textColor="@color/white"
-        />
+
+        >
+
+        <TextView
+            android:id="@+id/txt1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/aladin"
+            android:text="AES"
+            android:textColor="@color/white"
+            android:textSize="50sp"
+            android:textStyle="bold" />
+        <ImageView
+            android:id="@+id/imageview"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/clip"
+            android:layout_marginLeft="250dp"
+            android:layout_marginTop="20dp"
+            />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/ll2"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/bg_round"
+        android:layout_marginTop="50dp"
+        android:onClick="MD5">
+
+        <TextView
+            android:id="@+id/txt2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="30dp"
+            android:fontFamily="@font/aladin"
+            android:text="@string/md5"
+            android:textColor="@color/white"
+            android:textSize="50sp"
+            android:textStyle="bold"/>
+
+        <ImageView
+            android:id="@+id/imageview2"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginLeft="250dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/clip" />
+    </RelativeLayout>
 
 
-</RelativeLayout>
+</LinearLayout>
+
