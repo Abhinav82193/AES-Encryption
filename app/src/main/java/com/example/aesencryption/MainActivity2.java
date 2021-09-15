@@ -3,12 +3,14 @@ package com.example.aesencryption;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.math.BigInteger;
 import java.security.MessageDigest;
@@ -69,11 +71,31 @@ public class MainActivity2 extends AppCompatActivity {
     public void hashValue(View view) {
         String input = message_edit_text.getText().toString();
         String output = getMd5(input);
-        textview_md5.setText("Your Encrypted message: \n "+output);
-        View v = this.getCurrentFocus();
-        if (v != null) {
-            InputMethodManager imm = (InputMethodManager)getSystemService(Context.INPUT_METHOD_SERVICE);
-            imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+        if(input.length()>0) {
+            textview_md5.setText("Your Encrypted message: \n " + output);
+            View v = this.getCurrentFocus();
+            if (v != null) {
+                InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(view.getWindowToken(), 0);
+            }
         }
+        else
+        {
+            Toast.makeText(this,"Please enter message",Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    public void resetHash(View view) {
+        message_edit_text.setText("");
+        textview_md5.setText("");
+    }
+
+    public void shareHash(View view) {
+        String text = textview_md5.getText().toString();
+        Intent sendIntent = new Intent();
+        sendIntent.setAction(Intent.ACTION_SEND);
+        sendIntent.putExtra(Intent.EXTRA_TEXT, text);
+        sendIntent.setType("text/plain");
+        startActivity(sendIntent);
     }
 }

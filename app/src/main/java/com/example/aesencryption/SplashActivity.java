@@ -16,6 +16,12 @@ public class SplashActivity extends AppCompatActivity {
     MediaPlayer mysong;
 
     @Override
+    protected void onPause() {
+        super.onPause();
+        mysong.release();
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
@@ -24,10 +30,11 @@ public class SplashActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         mysong.start();
+
         Thread thread=new Thread(){
             public void run(){
                 try {
-                    sleep(30000);
+                    sleep(1000);
 
                 }catch(Exception e){
                     e.printStackTrace();
