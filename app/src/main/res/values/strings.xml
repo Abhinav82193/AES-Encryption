@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">ENCRYPTION ALGORITHMS</string>
+    <string name="md5">MD5</string>
 </resources>

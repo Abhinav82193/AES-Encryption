@@ -8,17 +8,29 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 public class FiirstActivity extends AppCompatActivity {
-    Button button1,button2,button3;
+   TextView textview1,textview2;
+   ImageView imageview1,imageview2;
+   RelativeLayout relativeLayout;
+   RelativeLayout relativeLayout2;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_fiirst);
-        button1=findViewById(R.id.b1);
-        button2=findViewById(R.id.b2);
-        button3=findViewById(R.id.button);
+        textview1=findViewById(R.id.txt1);
+        textview2=findViewById(R.id.txt2);
+        imageview1=findViewById(R.id.imageview);
+        imageview2=findViewById(R.id.imageview2);
+        relativeLayout=findViewById(R.id.ll1);
+        relativeLayout2=findViewById(R.id.ll2);
+
     }
 
     public void AES(View view) {
@@ -31,9 +43,5 @@ public class FiirstActivity extends AppCompatActivity {
         startActivity(intent2);
     }
 
-    public void share(View view) {
-        Intent intent3=new Intent(Intent.ACTION_CALL);
-        intent3.setData(Uri.parse("tel:7408690167"));
-        startActivity(intent3);
-    }
+
 }

@@ -14,6 +14,8 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.material.button.MaterialButtonToggleGroup;
 import com.scottyab.aescrypt.AESCrypt;
 import java.security.GeneralSecurityException;
 
@@ -27,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     ClipboardManager clipboardmanager;
     ClipData clipdata;
     String inputkey,inputmessage;
+    MaterialButtonToggleGroup btg;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,10 +39,8 @@ public class MainActivity extends AppCompatActivity {
         et_message = findViewById(R.id.et_message);
         message = findViewById(R.id.message);
         b1=findViewById(R.id.b1);
-
         b2=findViewById(R.id.b2);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-
     }
 
     @Override
