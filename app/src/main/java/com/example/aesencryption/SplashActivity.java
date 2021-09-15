@@ -24,8 +24,6 @@ public class SplashActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         mysong.start();
-      //  YoYo.with(Techniques.Bounce).duration(1000).repeat(1).playOn(textView);
-
         Thread thread=new Thread(){
             public void run(){
                 try {
