@@ -13,23 +13,17 @@ import com.daimajia.androidanimations.library.YoYo;
 
 public class SplashActivity extends AppCompatActivity {
     TextView textView;
-    MediaPlayer mysong;
-
-    @Override
-    protected void onPause() {
-        super.onPause();
-        mysong.release();
-    }
+    //MediaPlayer mysong;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
         textView=findViewById(R.id.t1);
-        mysong=MediaPlayer.create(SplashActivity.this,R.raw.song);
+        //mysong=MediaPlayer.create(SplashActivity.this,R.raw.song);
         getSupportActionBar().hide();
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        mysong.start();
+        //mysong.start();
 
         Thread thread=new Thread(){
             public void run(){
@@ -42,7 +36,7 @@ public class SplashActivity extends AppCompatActivity {
                 finally {
                     Intent intent=new Intent(SplashActivity.this,FiirstActivity.class);
                     startActivity(intent);
-                    mysong.release();
+                    //mysong.release();
                     finish();
                 }
             }
