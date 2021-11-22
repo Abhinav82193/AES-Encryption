@@ -16,8 +16,9 @@
         android:layout_width="match_parent"
         android:layout_height="200dp"
         android:background="@drawable/bg_round"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="10dp"
         android:onClick="AES"
+        android:layout_weight="1"
 
         >
 
@@ -32,14 +33,15 @@
             android:textColor="@color/white"
             android:textSize="50sp"
             android:textStyle="bold" />
+
         <ImageView
             android:id="@+id/imageview"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:src="@drawable/clip"
-            android:layout_marginLeft="250dp"
+            android:layout_marginLeft="140dp"
             android:layout_marginTop="20dp"
-            />
+            android:layout_toRightOf="@+id/txt1"
+            android:src="@drawable/clip" />
     </RelativeLayout>
     <RelativeLayout
         android:id="@+id/ll2"
@@ -47,30 +49,98 @@
         android:layout_height="200dp"
         android:background="@drawable/bg_round"
         android:layout_marginTop="50dp"
-        android:onClick="MD5">
+        android:onClick="MD5"
+        android:layout_weight="1">
 
         <TextView
             android:id="@+id/txt2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="30dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="20dp"
             android:layout_marginEnd="30dp"
             android:layout_marginBottom="30dp"
             android:fontFamily="@font/aladin"
             android:text="@string/md5"
             android:textColor="@color/white"
             android:textSize="50sp"
-            android:textStyle="bold"/>
+            android:textStyle="bold" />
 
         <ImageView
             android:id="@+id/imageview2"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_marginLeft="250dp"
+            android:layout_toRightOf="@+id/txt2"
+            android:layout_marginLeft="100dp"
             android:layout_marginTop="20dp"
             android:src="@drawable/clip" />
     </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/ll3"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/bg_round"
+        android:layout_marginTop="50dp"
+        android:onClick="DES"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/txt3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="30dp"
+            android:fontFamily="@font/aladin"
+            android:text="DES"
+            android:textColor="@color/white"
+            android:textSize="50sp"
+            android:textStyle="bold" />
+
+        <ImageView
+            android:id="@+id/imageview3"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_toRightOf="@+id/txt3"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/clip" />
+    </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/ll4"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/bg_round"
+        android:layout_marginTop="50dp"
+        android:onClick="RSA"
+        android:layout_weight="1">
+
+        <TextView
+            android:id="@+id/txt4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginBottom="30dp"
+            android:fontFamily="@font/aladin"
+            android:text="RSA"
+            android:textColor="@color/white"
+            android:textSize="50sp"
+            android:textStyle="bold"/>
+
+        <ImageView
+            android:id="@+id/imageview4"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_toRightOf="@+id/txt4"
+            android:layout_marginLeft="100dp"
+            android:layout_marginTop="20dp"
+            android:src="@drawable/clip" />
+    </RelativeLayout>
+
+
 
 
 </LinearLayout>

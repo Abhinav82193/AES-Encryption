@@ -18,6 +18,8 @@ public class FiirstActivity extends AppCompatActivity {
    ImageView imageview1,imageview2;
    RelativeLayout relativeLayout;
    RelativeLayout relativeLayout2;
+   RelativeLayout relativeLayout3;
+   RelativeLayout relativeLayout4;
 
 
     @Override
@@ -30,6 +32,9 @@ public class FiirstActivity extends AppCompatActivity {
         imageview2=findViewById(R.id.imageview2);
         relativeLayout=findViewById(R.id.ll1);
         relativeLayout2=findViewById(R.id.ll2);
+        relativeLayout3=findViewById(R.id.ll3);
+        relativeLayout4=findViewById(R.id.ll4);
+
 
     }
 
@@ -44,4 +49,13 @@ public class FiirstActivity extends AppCompatActivity {
     }
 
 
+    public void DES(View view) {
+        Intent intent3=new Intent(FiirstActivity.this,MainActivity3.class);
+        startActivity(intent3);
+    }
+
+    public void RSA(View view) {
+        Intent intent4=new Intent(FiirstActivity.this,MainActivity4.class);
+        startActivity(intent4);
+    }
 }

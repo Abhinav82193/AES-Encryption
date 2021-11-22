@@ -2,7 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.aesencryption">
-    <uses-permission android:name="android.permission.CALL_PHONE"/>
+
+    <uses-permission android:name="android.permission.CALL_PHONE" />
 
     <application
         android:allowBackup="true"
@@ -12,19 +13,27 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AesEncryption">
         <activity
+            android:name=".MainActivity4"
+            android:exported="true"
+            android:label="RSA"
+            android:parentActivityName=".FiirstActivity"/>
+        <activity
+            android:name=".MainActivity3"
+            android:exported="true"
+            android:label="DES"
+            android:parentActivityName=".FiirstActivity"/>
+        <activity
             android:name=".MainActivity2"
-            android:parentActivityName=".FiirstActivity"
+            android:exported="true"
             android:label="MD5"
-            android:exported="true"/>
-
+            android:parentActivityName=".FiirstActivity" />
         <activity
             android:name=".FiirstActivity"
-            android:exported="true"
-
-            />
+            android:exported="true" />
         <activity
             android:name=".SplashActivity"
-            android:exported="true">
+            android:exported="true"
+            tools:ignore="MissingClass">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -34,13 +43,11 @@
         <activity
             android:name=".MainActivity"
             android:exported="true"
-            android:label="AES"
-            />
+            android:label="AES" />
 
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
-
     </application>
 
 </manifest>
